@@ -57,7 +57,7 @@ aside
     display: none; /* Hide on Mobie*/
     
 }
-
+ 
 footer
 {
     background-color: hsl(209, 50%, 30%);
@@ -70,10 +70,9 @@ footer
         flex-wrap: wrap;
     }
     header, footer{
-        width: 100%;
+        flex-basis: 100%;
         height: auto;
-        padding-top: 30px;
-        padding-bottom: 30px;
+        /* height: 16.6%; */
     }
     aside{
         display: flex;
@@ -84,6 +83,7 @@ footer
     main{
         flex-grow: 1;
         flex-basis: 50%;
+        height: auto;
     }
     nav{
         flex-grow: 1;
