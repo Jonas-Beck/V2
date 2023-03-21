@@ -1,0 +1,287 @@
+/* Reset of all margins and paddings */
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Main styling */
+
+body
+{
+    /* width: 1200px; */
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header styling */
+
+header
+{
+    background-color: #CCCCCC;
+    /* height: 100px; */
+}
+
+    
+header img:first-of-type
+{
+    /* max-width: 100vw; */
+}
+
+header img:last-of-type
+{
+    /* max-width: 100%; */
+    /* float: right; */
+}
+
+/* General menu styling - applies to both menus (and footer for some properties) */
+
+body > li, nav ul li
+{
+    list-style-type: none;
+    line-height: 40px;
+}
+
+body > li a, nav ul a
+{
+    padding: 0 0 0 0.3em;
+}
+
+nav ul a, footer a, body > li a
+{
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li:hover, body > li:hover
+{
+    background-color: #CCCCCC;
+}
+
+nav ul li:hover a, body > li:hover a
+{
+    color: rgba(50, 54, 84, 0.8);
+}
+
+/* Top navigation styling (and some also apply for footer) */
+
+body > li, footer
+{
+    height: 40px;
+    background-color: #565952;
+    color: white;
+}
+
+/* Side navigation styling */
+
+nav
+{
+    background-color: #CCCCCC;
+}
+
+nav ul
+{
+    background-color: rgba(50, 54, 84, 0.8);
+}
+
+nav ul li a
+{
+    display: block;
+    border-bottom: 1px solid white;
+}
+
+nav ul li a, body > li a
+{
+    margin: 0 1rem;
+}
+
+nav ul li:last-of-type a
+{
+    border-bottom: none;
+}
+
+/* Footer styling */
+
+footer
+{
+    text-align: center;
+    line-height: 40px;
+}
+
+/* Article styling */
+
+article
+{
+    margin: 2em;
+    font-size: small;
+}
+
+article img
+{
+    float: left;
+    margin-right: 1em;
+}
+
+article p:first-of-type::first-line
+{
+    color: rgba(50, 54, 84, 0.9);
+    line-height: 1rem;
+    padding-bottom: 2px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+h2
+{
+    color: #565952;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #565952;
+}
+
+@media only screen and (min-width: 700px) {
+    
+    body
+    {
+        width: 1300px;
+        margin: 0 auto;
+    }
+
+    header img
+    {
+        height: 100px;
+    }
+
+    header img:last-of-type
+    {
+        /* float: right; */
+    }
+    
+    body > li
+    {
+        border-right: 1px solid white;
+    }
+
+    body > li:last-of-type
+    {
+        border-right: none;
+    }
+
+    nav>p
+    {
+        display: none;
+    }
+}
+
+/* Grid Styling*/
+
+/* Mobile */
+body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 10px;
+    grid-template-rows: 200px repeat(3, auto) repeat(4, 400px) auto auto; /* 400px article height not responsive */
+    grid-template-areas:
+        "header header header header header"
+        "li1 li1 li2 li2 ."
+        "li3 li3 li4 li5 ."
+        "li6 li6 li7 li7 ."
+        "article1 article1 article1 article1 ."
+        "article2 article2 article2 article2 ."
+        "article3 article3 article3 article3 ."
+        "article4 article4 article4 article4 ."
+        "nav nav nav nav ."
+        "footer footer footer footer .";
+}
+
+header{
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 100px;
+    grid-template-areas:
+        "header1 header1"
+        ". header2"
+        ;
+}
+
+header img:first-of-type
+{
+    grid-area: header1;
+    max-width: 100%;
+    height: auto;
+}
+
+header img:last-of-type
+{
+    grid-area: header2;
+}
+
+body > li:nth-of-type(1){
+    grid-area: li1;
+}
+body > li:nth-of-type(2){
+    grid-area: li2;
+}
+body > li:nth-of-type(3){
+    grid-area: li3;
+}
+body > li:nth-of-type(4){
+    grid-area: li4;
+}
+body > li:nth-of-type(5){
+    grid-area: li5;
+}
+body > li:nth-of-type(6){
+    grid-area: li6;
+}
+body > li:nth-of-type(7){
+    grid-area: li7;
+}
+
+nav{
+    grid-area: nav;
+}
+body > article:nth-of-type(1){
+    grid-area: article1;
+}
+body > article:nth-of-type(2){
+    grid-area: article2;
+}
+body > article:nth-of-type(3){
+    grid-area: article3;
+}
+body > article:nth-of-type(4){
+    grid-area: article4;
+}
+
+footer{
+    grid-area: footer;
+}
+
+/* Dekstop*/
+@media only screen and (min-width: 700px) {
+    
+    body{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 100px auto 373px 373px auto;
+        grid-template-areas:
+            "header header header header header header header"
+            "li1 li2 li3 li4 li5 li6 li7"
+            "nav article1 article1 article1 article2 article2 article2"
+            "nav article3 article3 article3 article4 article4 article4"
+            "footer footer footer footer footer footer footer"
+            ;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    body{
+        height: 100vh;
+
+    }
+}
