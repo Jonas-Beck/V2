@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    width: 100%;
+    height: 100vh;
+    color: hsl(209, 10%, 100%);
+}
+
+
+header, nav, footer, main, section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+header
+{
+    background-color: hsl(209, 50%, 30%);
+    grid-area: header;
+}
+
+nav
+{
+    background-color: hsl(209, 30%, 60%);
+    grid-area: nav;
+}
+
+main
+{
+    background-color: hsl(209, 20%, 80%);
+    grid-area: main;
+    padding: 20px 0px;
+}
+
+section{
+    width: 90%;
+    gap: 20px;
+}
+
+
+aside
+{
+    background-color: hsl(209, 80%, 50%);
+    display: none; /*Hide on Mobile*/
+    grid-area: aside;
+}
+
+footer
+{
+    background-color: hsl(209, 50%, 30%);
+    grid-area: footer
+}
+
+
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 80px auto 80px;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+}
+
+
+@media screen and (min-width: 600px) { /* Extra */
+    body{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 80px 80px auto 80px 80px;
+        grid-template-areas:
+            "header "
+            "nav "
+            "aside1"
+            "main"
+            "aside2"
+            "footer ";
+    }
+    aside{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    aside:first-of-type{
+        grid-area: aside1;
+    }
+    aside:last-of-type{
+        grid-area: aside2;
+    }
+}
+
+/* Desktop Size */
+@media screen and (min-width: 1200px) {
+    body{
+        display: grid;
+        grid-template-columns: 1fr 1fr 3fr 1fr;
+        grid-template-rows: 1fr 4fr 1fr;
+        grid-template-areas:
+            "header header header header"
+            "aside1 nav main aside2"
+            "footer footer footer footer";
+    }
+    aside{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    aside:first-of-type{
+        grid-area: aside1;
+    }
+    aside:last-of-type{
+        grid-area: aside2;
+    }
+}
