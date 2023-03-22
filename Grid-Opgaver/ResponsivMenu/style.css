@@ -28,7 +28,7 @@ h1, p
 
 nav
 {
-    height: 50px;
+    min-height: 50px;  /* Changed from height: 50px*/ 
     background-color: hsl(0, 0%, 50%);
 }
 
@@ -111,7 +111,7 @@ nav .menu-btn ~ .closeicon
     nav ul
     {
         display: flex;
-        flex-direction: row !important;
+        flex-direction: row !important; /* < My Code*/
         justify-content: space-evenly;
         height: auto;   
     }
@@ -128,6 +128,26 @@ nav .menu-btn ~ .closeicon
 
     nav ul li:hover a
     {
+        color: darkslategray;
+    }
+}
+
+/* My Code*/ 
+
+@media only screen and (max-width: 767px){
+    .menu-btn:checked ~ ul {
+        display: flex;
+        flex-direction: column;
+        background-color: hsl(0, 0%, 50%);
+        justify-content: end;
+        text-align: center;
+        height: 130px;
+    }
+
+    .menu-btn:checked ~ ul > li > a{
+        color: gainsboro;
+    }
+    .menu-btn:checked ~ ul > li:hover > a{
         color: darkslategray;
     }
 }
