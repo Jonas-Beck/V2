@@ -141,7 +141,8 @@ nav .menu-btn ~ .closeicon
         background-color: hsl(0, 0%, 50%);
         justify-content: end;
         text-align: center;
-        height: 130px;
+        height: 140px;
+        gap: 5px;
     }
 
     .menu-btn:checked ~ ul > li > a{
