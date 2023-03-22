@@ -15,7 +15,6 @@ body
     max-width: 1200px;
     margin: 0 auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
 
 /* Header styling */
@@ -179,6 +178,11 @@ h2
 /* Opgave Style Over*/ 
 
 
+/* General Styling */
+body{
+    height: 100vh;
+}
+
 /* Grid Areas */
 header{
     grid-area: header;
@@ -236,7 +240,6 @@ footer{
     grid-area: footer;
 }
 
-
 /* Mobile Standard */
 @media only screen and (max-width: 685px) {
     body{
@@ -290,14 +293,9 @@ footer{
         max-width: 100%;
         height: auto;
     }
-
     header{
         display: flex;
         justify-content: space-between;
-    }
-
-    body{
-        height: 100vh;
     }
     body > li{
         height: 100% ;
@@ -313,10 +311,6 @@ footer{
     }
     nav > ul > li > a{
         border: none;
-    }
-    body > header > img{
-        height: auto;
-        
     }
 }
 /* Dekstop*/
@@ -341,8 +335,5 @@ footer{
     header{
         display: flex;
         justify-content: space-between;
-    }
-    body{
-        height: 100vh;
     }
 }
