@@ -116,7 +116,7 @@ header > nav > ul > li > a{
 header > nav > .menuopener:checked ~ ul{
     display: block;
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 0px;
     right: 0px;
     height: 100%;
