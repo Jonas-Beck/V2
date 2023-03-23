@@ -42,7 +42,7 @@ p
 
 nav
 {
-    min-height: 50px; /* Changed from height:50px; */
+    height: 50px;
     background-color: hsl(0, 0%, 50%);
     line-height: 50px;
 }
@@ -129,7 +129,6 @@ main>span img
 }
 
 /*My Code*/
-
 @media only screen and (max-width: 767px){
 
     /*Hide open brugermenu icon when open*/
@@ -163,11 +162,22 @@ main>span img
         display: flex;
         flex-direction: column;
     }
-    .menu-btn:checked ~ul li > .submenu-btn:checked + h2{
-        background-color: red;
+    /*Rotate arrow icon when active*/
+    .menu-btn:checked ~ul li .submenu-btn:checked ~ img{
+        transform: rotate(180deg);
     }
     
-    
+    /* Change background color of sub menu when active */
+    .menu-btn:checked ~ul li > h2:has( + .submenu-btn:checked){ /*NOT SUPPROTED FOR FIREFOX*/
+        background-color: hsla(0, 0%, 20%);
+    }
+
+    /*Add border radius on first submenu h2 for when it is active*/
+    nav > ul >li:first-child > h2{
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+
     /* Position Relative for arrow / checkbox placement*/
     nav > ul > li{
         position: relative;
@@ -214,7 +224,6 @@ main>span img
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
     }
-
 }
 
 
@@ -238,7 +247,6 @@ main>span img
     nav ul
     {
         display: flex;
-        flex-direction: row !important; /* My Code*/
         justify-content: space-evenly;
         height: auto;   
     }
