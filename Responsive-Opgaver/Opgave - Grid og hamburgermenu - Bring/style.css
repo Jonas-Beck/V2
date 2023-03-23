@@ -1,0 +1,378 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+/*----------------Header Styling--------------*/
+header{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*Header Brand Icon*/
+header img:first-child{
+    padding: 0 15px;
+    width: 100px; /*100px for small mobile sizes to make space for search*/
+}
+/* Normal width for bigger sizes*/
+@media screen and (min-width: 500px) {
+    header img:first-child{
+        padding: 0 15px;
+        width: 165px; 
+    }
+}
+
+
+
+/* Form Styling*/
+header > form{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-grow: 2;
+    max-width: 900px; /* TODO same max-width as container for body / Footer*/
+
+}
+/* Input Size*/
+header > form > input:first-of-type{
+    padding: 10px;
+    padding-right: 50px;
+    width: 100%;
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+/*Remove outline on click*/
+header > form > input:first-of-type:focus{
+    outline: none;
+}
+/* Search Icon placement and size*/
+header .search{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 35px;
+}
+
+/*Min width so it works with justify-content when it dosent have content*/
+header > nav{
+    min-width: 50px
+}
+
+/*Position checkbox + images*/
+header > nav > .menuopener, header > nav > img{
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+/*Styling for Checkbox */
+header > nav > .menuopener{
+    display: block;
+    width: 40px;
+    z-index: 7;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/*Hide close icon*/
+header > nav > .closeicon{
+    display: none;
+}
+
+/*Hide burgermenu items*/
+header > nav > ul{
+    display: none; 
+    width: 100%;
+    list-style-type: none;
+    text-align: end;
+    font-size: 24px;
+}
+
+/*Background color on first item in burgermenu*/
+header > nav > ul > li:first-of-type{
+    background-color: #b8dd9e;
+}
+
+/*Hover effek on burgermenu items*/
+header > nav > ul > li:hover{
+    background-color: #b8dd9e; /*TODO CHANGE COLOR MAYBE*/
+}
+
+
+/*Style burgermenu Links*/
+header > nav > ul > li > a{
+    text-decoration: none;
+    display: block; /*Block so link get 100% width*/
+    padding: 1rem;
+    color: black;
+}
+
+/*Show burgermenu on click and styling*/
+header > nav > .menuopener:checked ~ ul{
+    display: block;
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* -----------------Main Styling----------------*/
+
+/*General Styling for main*/
+
+main article{
+    max-width: 800px;
+}
+
+main h2{
+    font-size: xx-large;
+    padding: 20px 0px;
+}
+
+/*Read More Button styling*/
+.readmore{
+    text-decoration: none;
+    color: white;
+    background-color: #333333;
+    border-radius: 5px;
+    padding: 7px 20px;
+    font-weight: 600;
+}
+
+
+/*-----Section 1-----*/
+/* Section same as image height*/
+main > section:nth-child(1){
+    height: 600px;
+}
+
+/* Display grid for text-placemnt*/
+main > section:nth-child(1){
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+/* Styling image */
+main > section:nth-child(1) > img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+
+/*Text styling*/
+main > section:nth-child(1) > article{
+    color: white;
+    font-size: x-large;
+}
+
+/*------Section 2-----*/
+/* Section 2 grid to center items*/
+main > section:nth-child(2){
+    margin: 40px 0px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+/*Mobile Grid for section 2 article*/
+main > section:nth-child(2) > article{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/*Dekstop Grid for section 2 article*/
+@media screen and (min-width: 800px) {
+    main > section:nth-child(2) > article{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-content: space-between;
+    }
+}
+
+/*------Section 3-----*/
+/* Section 3 grid to center items*/
+main > section:nth-child(3){
+    padding: 40px 0px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    background-color: #edcc35;
+    row-gap: 20px;
+}
+
+/*Mobile Grid for section 3 article*/
+main > section:nth-child(3) > article{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    text-align: start;
+    padding: 0 15px;
+    
+}
+
+/*Desktop Grid for section 3 article*/
+@media screen and (min-width: 800px) {
+    main > section:nth-child(3) > article{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;        
+        column-gap: 100px;
+        padding: 0 15px;
+    }
+}
+
+/*-----Section 4----*/
+/*Section 4 Grid to center items*/
+main > section:nth-child(4){
+    background-color: #7ac144;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+/*Grid to position items in article*/
+main > section:nth-child(4) > article {
+    padding: 40px 0px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    row-gap: 20px;
+}
+
+/*------Section 5------*/
+/*Section 5 Grid to center items*/
+main > section:nth-child(5) {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Grid to position items in article*/
+main > section:nth-child(5) > article {
+    padding: 40px 0px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    row-gap: 20px;
+}
+/*Scale image down to fit mobile sizes*/
+main > section:nth-child(5) > article > img {
+    scale: 0.8;
+}
+
+/*------Section 6-----*/
+main > section:nth-child(6) {
+    display: none;
+}
+
+/*----Section 7-----*/
+/*Section 7 Grid to center items*/
+main > section:nth-child(7){
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    height: 600px; /*Fixed height to match image*/
+}
+
+/*Styling for img (Same as section1 image)*/
+main > section:nth-child(7) > img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+/*Article Text Styling*/
+main > section:nth-child(7) > article{
+    color: white;
+}
+
+/*Same styling as .readmore button but different color and background*/
+main > section:nth-child(7) > article > .seekjob{
+    text-decoration: none;
+    color: black;
+    background-color: #edcc35;
+    border-radius: 5px;
+    padding: 7px 20px;
+    font-weight: 600;
+}
+
+/* -----------------Footer Styling----------------*/
+
+/*General footer styling*/
+/**/
+footer{
+    background-color: #333333;
+    color: white;
+}
+
+
+footer article{
+    max-width: 850px;
+    width: 100%;
+}
+/*H2 Styling*/
+footer h2{
+    font-size: xx-large;
+    padding: 20px 0px;
+}
+
+/*H3 Color styling*/
+footer h3{
+    color: #7ac144;
+}
+
+/*Remove list style on li*/
+footer li{
+    list-style-type: none;
+}
+
+/*Grid / Position Styling*/
+
+/*Background color and grid for placement*/
+footer{
+    padding: 40px 40px;
+    display: grid;
+    align-items: center;
+    justify-items: start;
+    row-gap: 20px;
+}
+
+footer >  article{
+    display: grid;
+    row-gap: 15px;
+}
+
+footer > article > .column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media screen and (min-width: 800px) {
+    footer >  article{
+        grid-template-columns: repeat(3, auto);
+    }
+    footer{
+        justify-items: center;
+    }
+}
+
