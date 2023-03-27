@@ -12,13 +12,19 @@ header{
 
 /*Navbar*/
 .navbar{
-    height: 50px;
+    min-height: 50px;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 40px;
 }
+
+/*Hide on mobile until menu-btn:checked*/
+nav{
+    display: none;
+}
+
 
 /*Navbar Link Styling*/
 nav > a{
@@ -27,14 +33,93 @@ nav > a{
     padding: 10px;
 }
 
+/*Change color on hover */
 nav > a:hover{
-    background-color: red;
+    color: red;
 }
 
-/*TEMP hidden element to center nav in middle*/
-.temp{
+/*Show navbar when .menu-btn:chcked*/
+nav:has(+ div > .menu-btn:checked){ /*NOT SUPPORTED ON FIREFOX*/
+    display: block;
+}
+
+
+/* position for checkbox, menuicon, closeicon*/
+.menu-btn, .menuicon, .closeicon
+{
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    right: 50px;
+}
+
+/* styling for checkbox */
+.menu-btn
+{
+    display: block;
+    width: 40px;
+    z-index: 7;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/*Place menuicon and closeicon above checkbox*/
+.menuicon, .closeicon
+{
+    z-index: 6;
+}
+
+/*Show menu icon by default on mobile*/
+.menuicon
+{
+    display: block;
+}
+
+/*Hide close icon by default*/
+.closeicon
+{
+    display: none;
+}
+
+/*Show close icon when navbar is shown*/
+.closeicon:has(+ .menu-btn:checked){
+    display: block;
+}
+.menuicon:has(~ .menu-btn:checked){
+    display: none;
+}
+
+/*Styling mobile navbar*/
+@media screen and (max-width: 700px) {
+    nav{
+        position: absolute;
+        background-color: black;
+        top: 60px;
+        left: 40px;
+        right: 40px;
+        text-align: center;
+        height: 25px;
+        border-radius: 15px;
+    }
+}
+
+/*Fixed width on menu btn same as navbar logo to center navbar*/
+.menu-btn-group{
     width: 61px;
 }
+
+/*Hide Menu btn on desktop / Tablet*/
+@media screen and (min-width: 700px){
+    nav{
+        display: block;
+    }
+    .menuicon, .closeicon{
+        display: none !important;
+    }
+}
+
+
+
 
 /*Background color and flex to center container*/
 body{
@@ -44,6 +129,7 @@ body{
 .container{
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 /*Mobile Grid */
