@@ -5,23 +5,83 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+/*Header Background*/
+header{
+    background-color: black;
+}
+
+/*Navbar*/
+.navbar{
+    height: 50px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+
+/*Navbar Link Styling*/
+nav > a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+nav > a:hover{
+    background-color: red;
+}
+
+/*TEMP hidden element to center nav in middle*/
+.temp{
+    width: 61px;
+}
+
 /*Background color and flex to center container*/
 body{
     background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
 }
-
-/*Container with max-width and display grid for placement of elements*/
+/*Container with max-width */
 .container{
     max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*Mobile Grid */
+.grid{
     display: grid;
     justify-content: center;
     align-items: center;
-    margin: 40px 40px;
+    margin: 40px 40px; /*Margin on Y for mobile */
     row-gap: 20px;
     column-gap: 20px;
 }
+
+/*Tablet Grid */
+@media screen and (min-width: 500px) and (max-width: 899px) {
+    .grid{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+    .grid article:first-child{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+/*Desktop Grid*/
+@media screen and (min-width: 900px) {
+    .grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(2, auto);
+
+    }
+    .grid article:first-child{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+
 
 
 /*Card Styling */
@@ -68,26 +128,3 @@ article:hover > .card-image > img{
     flex-wrap: wrap;
 }
 
-/*Tablet Grid */
-@media screen and (min-width: 500px) and (max-width: 899px) {
-    .container{
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(4, auto);
-    }
-    .container article:first-child{
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-}
-
-/*Desktop Grid*/
-@media screen and (min-width: 900px) {
-    .container{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: repeat(2, auto);
-    }
-    .container article:first-child{
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-}
