@@ -63,6 +63,9 @@ article:hover > .card-image > img{
 .card-footer{
     color: grey;
     padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /*Tablet Grid */
