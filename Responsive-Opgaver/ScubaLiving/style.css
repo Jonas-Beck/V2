@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+/*Variables*/
+:root{
+    /*TODO RENAME COLORS*/
+    --color-1: #B3B3B3;
+    --color-2: #1D1D1D;
+
+    --text-secondary: #6C757D;
+    --banner-text-color: #212529;
+    --card-background: #000000;
+
+    --header-background: #F8F9FA;
+    --footer-background: #000000;
+}
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', cursive; /*TODO more specific font selectors*/
+}
+
+/*-----HEADER-------*/
+
+/*-------MAIN-------*/
+
+/*Banner styling*/
+.banner{
+    background-image: url(./img/scuba2.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 600px; /* TODO Banner Height ??*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Textbox Styling*/
+.banner-text{  
+    background-color: hsla(0, 0%, 100%, .7);
+    color: #212529;
+    margin: 0px 20px;
+    padding: 20px 30px;
+    text-align: center;
+    font-weight: 500;
+}
+/*Text Styling*/
+.banner-text > h1{
+    font-size: xx-large;
+}
+.banner-text > h4{
+    margin-top: 5px;
+    font-size: large;
+    font-weight: 500;
+}
+
+/*Bigger text box on desktop*/
+@media screen and (min-width: 799px) {
+    .banner-text{
+        padding: 40px 90px;
+    }
+}
+
+/*Container for main content*/
+.main-container{
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 30px; /*TODO MEDIAQUERY FOR DESKTOP*/
+}
+
+/*Styling for section used on all sections*/
+.section-header{
+    display: flex;
+    margin: 30px 0px;
+}
+/*Styling on left side*/
+.section-header div:first-child{
+    background-color: var(--color-2);
+    color: white;
+    flex-grow: 1;
+    padding: 10px 10px 10px 20px;
+    width: 320px;
+}
+/*Left side text styling*/
+.section-header div:first-child > h1{
+    font-size: xx-large;
+}
+
+/*Styling Right side*/
+.section-header div:last-child{
+    background-color: var(--color-1);
+    flex-grow: 2;
+    padding: 10px;
+
+    display: none; /*Hide on mobile*/
+}
+
+
+
+/*Desktop specficic styling*/
+@media screen and (min-width: 500px){
+    .section-header div:last-child{
+        display: block; /*Show on desktop*/
+    }
+    .section-header div:first-child{
+        width: 445px; /* Higher width to make divs same size */
+        padding-left: 40px; 
+    }
+}
+
+
+
+
+
+/*-----FOOTER-------*/
+footer{
+    background-color: var(--footer-background);
+}
+
+/*Footer Item Placements*/
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 45px;
+    margin: 0 auto;
+    padding: 100px 0px;
+}
+
+/*Space on sides in small screen size*/
+.container-footer > div{
+    margin: 0 15px;
+}
+
+/*Text Styling*/
+footer h4{
+    color: white;
+    font-size: x-large;
+}
+footer a{
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: large;
+}
+
+/*Nav Postion Styling*/
+footer nav{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/*Desktop Mediaquery*/
+@media screen and (min-width: 737px) {
+    .container-footer{
+        flex-direction: row;
+        gap: 25px;
+        max-width: 70%;
+    }
+    
+}
