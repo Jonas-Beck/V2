@@ -128,6 +128,7 @@ main>span img
     width: 30px;
 }
 
+
 /*---------------My Code Burger Menu Opgave--------------------*/
 @media only screen and (max-width: 767px){
 
@@ -290,6 +291,57 @@ h1{
     }
 }
 
+
+
+
+.menu-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 6;
+}
+
+.bar{
+    height: 5px;
+    width: 100%;
+    background-color: black;
+    transition: .5s;
+    opacity: 1;
+}
+
+/*Hide bar number 2 in div*/
+.menu-btn:checked ~ .menu-icon > .bar:nth-child(2){
+    visibility: hidden;
+    opacity: 0;
+    height: 0px;
+
+    position: absolute;
+}
+
+
+/*Rotate bar number 1*/
+.menu-btn:checked ~ .menu-icon > .bar:nth-child(1){
+    transform: rotate(45deg) translateY(15px);
+    transition: transform .5s;
+}
+
+/*Rotate bar number 3*/
+.menu-btn:checked ~ .menu-icon > .bar:nth-child(3){
+    transform: rotate(-45deg) translateY(-15px);
+    transition: transform .5s;
+}
+
+/*Hide button on desktop*/
+@media only screen and (min-width: 768px){
+    .menu-icon{
+        display: none;
+    }
+}
 
 
 /* Særlig styling til desktop - minimum viewport bredde på 768 pixels */
