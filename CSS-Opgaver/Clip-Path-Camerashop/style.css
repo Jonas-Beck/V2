@@ -1,0 +1,119 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+header, footer{
+    background-color: blue;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+
+body{
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: 100px 1fr 100px;
+    grid-template-rows: 100px 1fr 100px;
+    height: 100vh;
+}
+
+
+main{
+    display: -ms-grid;
+    display: grid;
+    background-color: grey;
+    padding: 40px 40px;
+    height: 100%
+}
+
+main > div > div{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+}
+
+main > div{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 30px;
+}
+
+@media screen and (max-width:1500px) {
+    h2{
+        position: absolute;
+        color: blue;
+        background-color: rgba(255, 255, 255, 0.6);
+        width: 100%;
+        bottom: 10%;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    main{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width:1500px) {
+    main{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width:1500px) {
+    img{
+        clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 85%);
+    }
+
+    main > div:nth-child(1) > div > img:hover{
+        clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 52% 100%, 30% 75%, 0% 75%);
+        opacity: 0.7;
+    }
+    main > div:nth-child(2) > div > img:hover{
+        clip-path: circle(40% at 50% 50%);    
+        opacity: 0.7;
+    }
+    main > div:nth-child(3) > div > img:hover{
+        clip-path: inset(10% 10% 20% 10% round 5%);
+        opacity: 0.7;
+    }
+    main > div:nth-child(4) > div > img:hover{
+        clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+        opacity: 0.7
+    }
+
+    main > div > div > img:hover ~ h2 {
+        opacity: 0.7;
+    }
+   
+}
+
