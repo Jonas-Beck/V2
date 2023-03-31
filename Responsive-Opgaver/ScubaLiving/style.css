@@ -8,11 +8,16 @@
     --color-2: #1D1D1D;
 
     --text-secondary: #6C757D;
+    --section-link-text: #212529;
     --banner-text-color: #212529;
-    --card-background: #000000;
 
+    --header-login-background: #E7E7E7;
+    --header-button-background: #F5F5F5;
+    --header-input-background: #E7E7E7;
+    --card-background: #000000;
     --header-background: #F8F9FA;
     --footer-background: #000000;
+    
 }
 
 
@@ -20,10 +25,197 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: 'Bebas Neue', cursive; /*TODO more specific font selectors*/
+    font-family: 'Bebas Neue', cursive;
 }
 
 /*-----HEADER-------*/
+
+.navbar-container{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0px;
+    gap: 10px;
+}
+
+/*Navbar styling */
+.navbar{
+    background-color: var(--header-background);
+    transition: height .5s;
+    height: 90px;
+}
+
+/*Styling for burgermenu div*/
+.navbar-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    min-height: 40px;
+    position: relative;
+    margin-left: 20px;
+}
+
+/*Position burgermenu icons/checkbox*/
+.menuicon, .closeicon, .menu-btn{
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*Checkbox specific styling*/
+.menu-btn
+{
+    display: block;
+    width: 40px;
+    z-index: 7;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/*Hide close icon by default*/
+.closeicon{
+    display: none;
+}
+
+/*Image div styling*/
+.navbar-brand{
+    min-height: 70px;
+    min-width: 250px;
+}
+
+/*Burgermenu items / Main nav  (LINKS + SEARCH BUTTON)*/
+.navbar-main{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    gap: 15px;
+}
+/*Nav links styling*/
+.navbar-links{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/*Nav links text styling*/
+.navbar-links > a{
+    text-decoration: none;
+    color: black;
+    font-size: xx-large;
+}
+/*Change color on first link */
+.navbar-links > a:first-child{
+    color: var(--text-secondary);
+}
+
+.navbar-search{
+    display: flex;
+    flex-grow: 1;
+    max-width: 500px;
+    background-color: var(--header-input-background);
+}
+.navbar-search > input{
+    padding: 8px;
+    background-color: var(--header-input-background);
+    border: none;
+    margin: 3px 1.5px 3px 3px;
+    flex-grow: 1;
+}
+.navbar-search > input:focus{
+    outline: none;
+    background-color: white;
+}
+
+.navbar-search > button{
+    padding: 8px 20px;
+    background-color: var(--header-button-background);
+    margin: 3px 1.5px 3px 3px;
+    border: none;
+    font-size: larger;
+}
+/*Hide menu bar by default*/
+.navbar-main{
+    opacity: 0;
+}
+/*Margin right in login button*/
+.navbar-login{
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.navbar-login > img{
+    width: 43px;
+    height: 43px;
+}
+.navbar-login > p{ 
+    background-color: var(--header-login-background);
+    padding: 10px 20px;
+    font-size: large;
+    color: var(--text-secondary);
+    text-decoration: none;  
+}
+
+
+
+/*Mobile Specific styling*/
+@media screen and (max-width: 1351px) {
+    .navbar-main{
+        position: absolute;
+        background-color: var(--header-background);
+        top: -320px;
+        left: 90px;
+        transition: opacity transform 5s;
+    }
+
+    /*TODO CHECKBOX + JAVASCRIPT TO ENABLE INSTEAD OF HOVER*/
+    .navbar:hover .navbar-main{
+        transform: translateY(410px);
+        transition: transform .5s;
+        opacity: 1;
+    }
+    .navbar:hover{
+        height: 500px;
+        transition: height .5s;
+    }
+}
+/*Desktop Specific Styling*/
+@media screen and (min-width: 1351px){
+    .navbar-menu{
+        display: none;
+    }
+    .navbar-links{
+        flex-direction: row;
+        
+    }
+    .navbar-main{
+        flex-grow: 1;
+        align-items: center;
+        flex-direction: row;
+        opacity: 1;
+    }
+}
+
+
+
+/*DESKTOP*/
+/*IMG (LINKS SEARCH) LOGIN*/
+
+/*MOBILE*/
+/*MENU IMG LOGIN*/
+/*LINKS*/
+/*SEARCH*/
+
+/*Position aboslute nav with transition height on navbar*/
+/* .navbar:hover{
+    height: 500px;
+    transition: height 5s;
+} */
+
 
 /*-------MAIN-------*/
 
@@ -32,7 +224,7 @@
     background-image: url(./img/scuba2.jpg);
     background-size: cover;
     background-position: center;
-    height: 600px; /* TODO Banner Height ??*/
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,7 +259,7 @@
 .main-container{
     max-width: 1800px;
     margin: 0 auto;
-    padding: 0 30px; /*TODO MEDIAQUERY FOR DESKTOP*/
+    padding: 0 30px;
 }
 
 /*Styling for section used on all sections*/
@@ -97,8 +289,6 @@
     display: none; /*Hide on mobile*/
 }
 
-
-
 /*Desktop specficic styling*/
 @media screen and (min-width: 500px){
     .section-header div:last-child{
@@ -110,10 +300,182 @@
     }
 }
 
+/*1 item each row row*/
+.product-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 50px 0px;
+}
+
+/*2 items each row */
+@media screen and (min-width:668px) {
+    .product-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*3 items each row*/
+@media screen and (min-width:992px) {
+    .product-grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*4 items each row*/
+@media screen and (min-width:1200px) {
+    .product-grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/*Styling for product cards*/
+.product-card{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgba(0, 0, 0, .175);
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    color: var(--text-secondary);
+    margin: 15px;
+    box-shadow: -5px 5px 20px #888888;
+    text-align: center;
+    cursor: pointer;
+}
+/*Styling for product card image*/
+.product-card > figure > img{
+    width: 100%;
+    height: auto;
+}
+/*Styling for prodcut card title text*/
+.product-card > .product-title{
+    font-size: large;
+} 
+/*Styling for product card price text*/
+.product-card > .product-price{
+    padding-top: 10px;
+    font-size: large;
+}
+
+/*Link Div */
+.section-link{
+    text-align: center;
+    padding-bottom: 20px;
+    transition: .5s;
+    padding: 0 10px;
+}
+.section-link:last-child{
+    padding-bottom: 30px;
+}
+
+/*Hover effekts on section link*/
+.section-link:hover{
+    transform: scale(1.2);
+}
+.section-link:hover > a{
+    color: var(--text-secondary);
+}
+
+/*Link Styling*/
+.section-link > a{
+    color: var(--section-link-text);
+    text-decoration: none;
+    font-size: 45px;
+}
+
+/*Grid used to place travel cards*/
+.travel-grid{
+    display: grid;
+    row-gap: 15px;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 15px;
+}
+@media screen and (min-width: 992px){
+    .travel-grid{
+        grid-template-columns: 1fr 1fr;
+        column-gap: 40px;
+    }
+}
+
+/*Travel card styling*/
+.travel-card{
+    display: flex;
+    flex-direction: column;
+    box-shadow: -5px 5px 20px #888888;
+    cursor: pointer;
+    padding: 1px;
+}
+
+/*White space around image*/
+.travel-card-image{
+    padding: 5px;
+}
+@media screen and (min-width: 992px){
+    .travel-card-image{
+        padding: 20px; /*More white space on desktop*/
+    }
+}
+
+/*Reponsive image styling*/
+.travel-card-image > img{
+    width: 100%;
+    height: auto;
+}
+
+/*Text styling*/
+.travel-card-text{
+    background-color: var(--card-background);
+    color: white;
+    padding: 40px 30px;
+}
+.travel-card-text > h2{
+    font-size: 40px;
+}
 
 
+/*PADI box styling*/
+.padi-box{
+    border: 1px solid black;
+    margin: 40px 0px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.padi-box-text{
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.padi-box-text > h2{
+    font-size: 32px;
+}
+.padi-box-text > p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
+.padi-box-image{
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+.padi-box-image > img{
+    align-self: center;
+}
 
+/*Desktop Specific*/
+@media screen and (min-width: 992px){
+    .padi-box{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .padi-box-text{
+        max-width: 45%;
+        margin: 70px;
+    }
+    
+}
 /*-----FOOTER-------*/
 footer{
     background-color: var(--footer-background);
