@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Box Game</title>
+    <style>
+        body{ 
+   display: flex;	    flex-direction: column;    justify-content	: center;	    align-items: center;	    min-height: 100vh;    background: orange; 
+} button{ 
+   background: red;    color: white;	    padding: 2rem 3rem;    font-size: 2rem;    border: none; 
+} 
+#result{ 
+   font-size:  1.4 rem;    line-height: 1.2; 
+   padding:  1 rem; 
+} 
+
+    </style>
+</head>
+<body>
+    <button id="start">Start Spil</button>
+    <div id="result"></div>
+    <script>
+        const button = document.getElementById("start")
+        button.addEventListener("click", startGame, false)
+
+        function startGame(){
+            var userName = prompt("Indtast dit navn")
+            if (userName){
+            var welcome = confirm("Hej " + userName + ". Er du klar til at spille?")
+            if (welcome == true) {
+                var score = 0
+
+                // Question 1
+                var question1 = prompt("Spørgsmål1: \nHvad er 2 + 2?")
+                if (question1 == 4) {
+                    alert("Korrekt")
+                    var answer1 = "Sprøgsmål 1: Korrekt"
+                    score++
+                }
+                else{
+                    alert("Forkert")
+                    var answer1 = "Sprøgsmål 1: Forkert"
+                }
+
+                // Question 2
+                var question2 = prompt("Spørgsmål1: \nHvad er 3 + 2?")
+                if (question2 == 5) {
+                    alert("Korrekt")
+                    var answer2 = "Sprøgsmål 2: Korrekt"
+                    score++
+                }
+                else{
+                    alert("Forkert")
+                    var answer2 = "Sprøgsmål 2: Forkert"
+                }
+                // Question 3
+                var question3 = prompt("Spørgsmål1: \nHvad er 4 + 2?")
+                if (question3 == 6) {
+                    alert("Korrekt")
+                    var answer3 = "Sprøgsmål 3: Korrekt"
+                    score++
+                }
+                else{
+                    alert("Forkert")
+                    var answer3 = "Sprøgsmål 3: Forkert"
+                }
+
+                // Question 4
+                var question4 = prompt("Spørgsmål1: \nHvad er 5 + 2?")
+                if (question4 == 7) {
+                    alert("Korrekt")
+                    var answer4 = "Sprøgsmål 4: Korrekt"
+                    score++
+                }
+                else{
+                    alert("Forkert")
+                    var answer4 = "Sprøgsmål 4: Forkert"
+                }
+
+                // Question 5
+                var question5 = prompt("Spørgsmål1: \nHvad er 6 + 2?")
+                if (question5 == 8) {
+                    alert("Korrekt")
+                    var answer5 = "Sprøgsmål 5: Korrekt"
+                    score++
+                }
+                else{
+                    alert("Forkert")
+                    var answer5 = "Sprøgsmål 5: Forkert"
+                }
+
+                var result = document.querySelector("#result")
+                result.innerHTML = "<h2>Samlet score for " + userName + ": " + score + "</h2>"
+                result.innerHTML += answer1 + "<br>"
+                result.innerHTML += answer2 + "<br>"
+                result.innerHTML += answer3 + "<br>"
+                result.innerHTML += answer5 + "<br>"
+                result.innerHTML += answer6 + "<br>"
+            }
+        }
+        }
+        
+    </script>
+</body>
+</html>
