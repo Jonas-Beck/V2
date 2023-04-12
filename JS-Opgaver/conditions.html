@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions</title>
+</head>
+<body>
+    <script>
+
+        //1
+        var answers1 = []
+
+        answers1.push(prompt("Indtast tal 1"))
+        answers1.push(prompt("Indtast tal 2"))
+        alert(Math.max(...answers1))
+
+        //2
+        var answers2 = []
+        answers2.push(prompt("Indtast tal 1"))
+        answers2.push(prompt("Indtast tal 2"))
+        answers2.push(prompt("Indtas tal 3"))
+        alert(Math.min(...answers2))
+
+        //3 
+        var response = prompt("indtast et talk")
+        if (response % 2 == 0){
+            alert("Du har indtastet et lige tal")
+        }
+        else{
+            alert("Du har indtastet et ulige tal")
+        }
+
+        //4
+        var correct = prompt("Indtast antal rigtige svar i opgaven")
+
+        switch(true){
+            case correct < 0:
+                alert("Du indtastede en ugyldig værdi")
+                break
+            case correct == 0:
+                alert("Du fik -3")
+                break
+            case correct <= 10:
+                alert("Du fik 00")
+                break
+            case correct <= 20:
+                alert("Du fik 02")
+                break
+            case correct <= 40:
+                alert("Du fik 4")
+                break
+            case correct <= 55:
+                alert("Du fik 7")
+                break
+            case correct <= 70:
+                alert("Du fik 10")
+                break
+            case correct <= 80:
+                alert("Du fik 12")
+                break
+            default:
+                alert("Du indtastede en ugyldig værdig")
+                break
+        }
+
+        //5
+        var x = prompt("Indtast et tal")
+        alert(`x ganget med sig selv er: ${x * x}\nKvadratroden af x er: ${Math.sqrt(x)}\nx opløftet i x.potens er: ${Math.pow(x, x)}`)
+
+        // 6
+        const date = new Date();                    
+        const monthText = date.toLocaleString('en-GB', { month: "long"})
+        const monthDate = date.getMonth()
+        var season
+        switch(true){
+            case monthDate >= 2 && monthDate <= 4:
+                season = "Spring"
+                break
+            case monthDate >= 5 && monthDate <= 7:
+                season = "Summer"
+                break
+            case monthDate >= 8 && monthDate <= 10:
+                season = "Autumn"
+                break
+            default:
+                season = "Winter"
+                break
+            
+        }
+        alert(`Month: ${monthText}\nSeason: ${season}`)
+
+
+
+    </script>
+</body>
+</html>
