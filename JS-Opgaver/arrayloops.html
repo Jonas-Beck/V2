@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Loops</title>
+</head>
+<body>
+    <script>
+        // 1
+        var countrys = ["Danmark", "Sverige", "Norge", "Finland"]
+        console.log(countrys)
+
+        // 2
+        var mixed = ["Christain", 45, "[1", 2, "3]", "Dorte"]
+        console.log(mixed[3]);
+
+        // 2 Ekstra
+        var numbers = [1, 2, 3]
+        var mixed1 = ["Christain", 45, numbers, "Dorte"]
+        console.log(mixed1[2][1]);
+
+        //3 
+        var fruits = ["apples", "oranges", "bananas"]
+        //3.a
+        fruits.push("Kiwi")
+        console.log(fruits);
+        //3.b
+        fruits.unshift("Strawberry")
+        console.log(fruits);
+        //3.c
+        fruits.pop()
+        console.log(fruits);
+        //3.d
+        fruits.splice(1, 2)
+        console.log(fruits);
+
+        //4 
+        var array = {
+                firstname: "John",
+                lastname:"Doe",
+                address: "Fosse Way 1",
+                city: "London",
+                phone:"4532 2341 7392"
+            }
+
+        //4.a
+        console.log(array);
+
+        //4.b
+        var values1 = []
+        for (var key in array) {
+            values1.push(key)
+        }
+        console.log(values1);
+        
+        //4.c
+        var values2 = []
+        for (var key in array) {
+            values2.push(array[key])
+        }
+        console.log(values2);
+
+        //4.d
+        for (const key in array) {
+            console.log(key + ": " + array[key]);
+        }
+        var active = true;
+        
+        //5
+        while(active){
+            var answer = prompt("Indtast et tal mellem 1 og 10 (Begge inkulsive)")
+            if (answer >= 1 && answer <= 10){
+                active = false;
+            }
+        }
+
+
+    </script>
+</body>
+</html> 
