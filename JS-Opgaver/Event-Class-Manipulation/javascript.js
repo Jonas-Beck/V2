@@ -7,14 +7,6 @@ btnHello.addEventListener("click", function(){
 })
 
 
-// const listItems = document.querySelectorAll("ul > li")
-
-// listItems.forEach( item =>{
-//     item.addEventListener("click", function(event){
-//         event.target.style.vis
-//     })
-// })
-
 // Opgave 2
 function textAlert(evt){
     alert(evt.target.innerHTML)
