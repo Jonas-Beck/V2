@@ -46,7 +46,6 @@
         form1.addEventListener("submit", function(e){
             e.preventDefault()
             alert(`Firstname: ${form1.firstname.value}\nLastname: ${form1.lastname.value}`)
-            form1.submit() // ??? Powerpoint 4/4
         })
 
          //Opgave 2
@@ -55,7 +54,6 @@
         form2.addEventListener("submit", function(e){
             e.preventDefault()
             alert(`Resultatet er: ${Number(form2.number1.value) + Number(form2.number2.value)}`)
-            form2.submit() // ??? Powerpoint 4/4
         })
 
          //Opgave 3
@@ -67,7 +65,6 @@
             let VAT = Number(form3.price.value * 1.25) // VAT 25%
             let finalPrice = VAT * (1 - discount) // Total Price after VAT and discount
             alert(VAT + " " + finalPrice)
-            form3.submit() // ??? Powerpoint 4/4
         })
 
          //Opgave 4
@@ -88,8 +85,6 @@
             e.preventDefault()
 
             verifyEmail(form4.email.value) ? alert("Du har indtastet en gyldig email address") : alert("Indtast venligst en gyldig email adresss")
-
-            form4.submit() // ??? Powerpoint 4/4
         })
 
 
