@@ -32,12 +32,7 @@ document.querySelectorAll(".btn-bg").forEach((btn) => btn.addEventListener("clic
 const orangeBox = document.querySelector(".orangebox")
 
 function showDiv(){
-    if (orangeBox.style.visibility == "visible") {
-        orangeBox.style.visibility = "hidden"
-    }
-    else{
-        orangeBox.style.visibility = "visible"
-    }
+    orangeBox.style.visibility == "visible" ? orangeBox.style.visibility = "hidden" : orangeBox.style.visibility = "visible"
 }
 
 document.querySelector(".orangebox > button").addEventListener("click", showDiv, false)
