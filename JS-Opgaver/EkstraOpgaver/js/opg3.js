@@ -1,0 +1,1 @@
+// Løs opgave 3 ved at udfylde denne js-fil med variabler, event-listners og functions
