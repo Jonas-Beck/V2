@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops Menu</title>
+    <style>
+        nav{
+            background-color: orange;
+            padding: 0 40px;
+        }
+        ul{
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        li{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            border-left: 1px solid white;
+            padding: 20px 40px;
+        }
+        li:hover{
+            background-color: orangered;
+        }
+        li:last-of-type > a{
+            border-right: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var menu = {
+            "Home": "home.html",
+            "Product" : "products.html",
+            "Pricing" : "pricing.html",
+            "Vision" : "vision.html",
+            "About" : "about.html",
+            "Contact" : "contact.html"
+        }
+        const nav = document.createElement("nav")
+        const ul = document.createElement("ul")
+        
+        for (const key in menu){
+            const li = document.createElement("li")
+            const a = document.createElement("a")
+            a.innerHTML = key
+            a.href = menu[key]
+
+            li.appendChild(a)
+            ul.appendChild(li)
+        }
+
+        nav.appendChild(ul)
+        document.body.appendChild(nav)
+
+
+    </script>
+</body>
+</html>
