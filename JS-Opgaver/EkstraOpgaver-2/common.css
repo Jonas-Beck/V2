@@ -1,0 +1,199 @@
+﻿/* ELEMENTS/TAGS */
+* {
+    font-family: Verdana, Sans-Serif;
+}
+
+body {
+    font-size: 12px;
+    background: #AFC4A2;
+}
+
+ol,
+ul {
+    width: 700px;
+    padding-bottom: 10px;
+}
+
+li {
+    line-height: 20px;
+    padding-bottom: 15px;
+    width: 80%;
+}
+
+p {
+    line-height: 20px;
+}
+
+a {
+    color: #1c3446;
+    text-decoration: underline;
+    padding: 3px;
+}
+
+a:hover {
+    background-color: #DBEAF9;
+}
+
+input {
+    margin-top: 20px;
+}
+
+select {
+    width: 150px;
+    padding: 5px;
+}
+
+
+
+
+/* IDs etc */
+#wrapper {
+    width: 800px;
+    margin: auto;
+    padding: 40px 60px 40px 80px;
+    background: #FFF;
+    border: 1px solid #6E9242;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px #000;
+}
+
+/* opgave 2 */
+.roed {
+    padding: 10px;
+    background-color: rgb(145, 24, 24);
+    border-color: rgb(145, 24, 24);
+    color: #fff;
+}
+
+.groen {
+    padding: 10px;
+    background-color: rgb(93, 150, 93);
+    border-color: rgb(93, 150, 93);
+    color: #fff;
+}
+
+.blaa {
+    padding: 10px;
+    background-color: rgb(38, 115, 192);
+    border-color: rgb(38, 115, 192);
+    color: #fff;
+}
+
+/* opgave 3 */
+
+.operator {
+    padding: 10px;
+    background-color: #BFF2BF;
+    border-color: #BFF2BF;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.storby {
+    padding: 10px;
+    background-color: #A76CB2;
+    border-color: #A76CB2;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#tal1,
+#tal2 {
+    width: 120px;
+    padding: 10px;
+}
+
+.semig {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+
+#naeste {
+    margin-top: 30px;
+    padding: 10px;
+    text-align: right;
+
+}
+
+#naeste a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+#opgaven {
+    width: 80%;
+    margin: 50px auto;
+    padding: 40px;
+    border: 1px dashed #6E9242;
+    border-radius: 20px;
+    box-shadow: 4px 4px 2px 1px rgba(200, 200, 200, .3);
+}
+
+
+#kontroller {
+    margin: 10px 20px 10px 10px;
+}
+
+#kontroller img {
+    cursor: pointer;
+}
+
+#bane {
+    position: relative;
+    width: 500px;
+    height: 80px;
+    background-color: #F0F0F0;
+}
+
+
+#rollo {
+    position: absolute;
+    bottom: 10px;
+    left: 400px;
+}
+
+
+/* MISC */
+.centertxt {
+    text-align: center;
+}
+
+.i {
+    font-style: italic;
+}
+
+.b {
+    font-weight: bold;
+    color: #11111d;
+}
+
+.dispnone {
+    display: none;
+}
+
+.alert {
+    color: Red;
+    font-weight: bold;
+}
+
+.hilite {
+    background-color: #FFFFA5;
+}
+
+.big {
+    font-size: 2em;
+}
+
+.clear {
+    clear: both;
+}
+
+.pointer {
+    cursor: pointer;
+}
