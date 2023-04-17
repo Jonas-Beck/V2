@@ -1,0 +1,30 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(34, 90%, 60%);
+}
+ul {
+  display: flex;
+  list-style-type: none;
+}
+li {
+  padding: 20px;
+  background-color: hsl(34, 60%, 45%);
+  cursor: pointer;
+}
+.content > div {
+  padding: 10px;
+  height: 300px;
+  display: none;
+}
+.show {
+  display: block !important;
+}
+.active,
+.show {
+  background-color: hsl(34, 72%, 50%);
+}
