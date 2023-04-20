@@ -7,6 +7,10 @@ body {
 .image-carousel {
     position: relative;
     background-color: black;
+    height: 37vw;
+    max-height: 350px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .carousel-item {
@@ -15,11 +19,10 @@ body {
     opacity: 0.4;
     overflow: hidden;
     transition: opacity 1s ease-out;
-    
 }
 .carousel-item > img {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .item-active {
@@ -54,7 +57,7 @@ body {
     background-color: grey !important;
 }
 
-.carousel-arrows{
+.carousel-arrows {
     display: flex;
     justify-content: space-between;
     position: absolute;

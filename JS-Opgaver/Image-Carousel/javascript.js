@@ -4,17 +4,16 @@ const imageCarousel = document.querySelector(".image-carousel")
 const carouselItems = document.querySelectorAll(".carousel-item")
 // Index for current image shown
 let index = 0
-let timeoutId
 
 window.onload = function () {
     createDots()
     createArrows()
-    const timeoutId = setTimeout(slideshowSlider, 3000)
+    setTimeout(slideshowSlider, 3000)
 }
 
 function slideshowSlider() {
     slideRight()
-    const timeoutId = setTimeout(slideshowSlider, 3000)
+    setTimeout(slideshowSlider, 3000)
 }
 
 function createDots() {
@@ -34,8 +33,8 @@ function createDots() {
 
     //Add eventlistener to all dots
     document.querySelectorAll(".carousel-dots > div").forEach((item, i) => {
-        item.addEventListener("click", function(){
-            //Swap to image with same index as clicked dot 
+        item.addEventListener("click", function () {
+            //Swap to image with same index as clicked dot
             slideIndex(i)
         })
     })
@@ -57,12 +56,10 @@ function createArrows() {
     right.classList = "fa-solid fa-chevron-right fa-xl"
 
     left.addEventListener("click", function () {
-        slideLeft()
-        clearTimeout(timeoutId) 
+        slideLeft() // TODO Remove AutoSlide
     })
     right.addEventListener("click", function () {
-        slideRight()
-        clearTimeout(timeoutId)
+        slideRight() // TODO Remove AutoSlide
     })
 
     div.appendChild(left)
@@ -72,33 +69,14 @@ function createArrows() {
 }
 
 function slideLeft() {
-    //Save all dots in const
-    const carouselDots = document.querySelectorAll(".carousel-dots > div")
 
-    //Remove active class from previous selected element
-    carouselItems[index].classList.toggle("item-active")
-    carouselDots[index].classList.toggle("dot-active")
-
-    //Checks if index == first elemnt if true changes index to last element
-    index == 0 ? (index = carouselItems.length - 1) : index--
-
-    carouselItems[index].classList.toggle("item-active")
-    carouselDots[index].classList.toggle("dot-active")
+    //Checks if index == first elemnt if true changes index to last element else index +1
+    index == 0 ? slideIndex(carouselItems.length - 1): slideIndex(index - 1)
 }
 
 function slideRight() {
-    //Save all dots in const
-    const carouselDots = document.querySelectorAll(".carousel-dots > div")
-
-    //Remove active class from previous selected element
-    carouselItems[index].classList.toggle("item-active")
-    carouselDots[index].classList.toggle("dot-active")
-
-    //Checks if index == last elemnt if true changes index to first element
-    index == carouselItems.length - 1 ? (index = 0) : index++
-
-    carouselItems[index].classList.toggle("item-active")
-    carouselDots[index].classList.toggle("dot-active")
+    //Checks if index == last elemnt if true changes index to first element else index +1
+    index == carouselItems.length - 1 ? slideIndex(0) : slideIndex(index + 1)
 }
 
 function slideIndex(i) {
