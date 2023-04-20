@@ -46,10 +46,6 @@ body {
 @media screen and (max-width: 855px) {
     #navigation {
         background-color: hsla(0, 0%, 20%, 0.6);
-    }
-
-    #navigation {
-        background-color: hsla(0, 0%, 20%, 0.6);
         position: absolute;
         top: 0px;
         bottom: 0px;
