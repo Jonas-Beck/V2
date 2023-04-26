@@ -1,0 +1,176 @@
+/*NOT MY CODE*/
+
+* {
+    padding: 0px;
+    margin: 0px;;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(80, 74, 74);
+}
+
+.site-wrapper{
+    max-width: 70vw;
+    margin: 0 auto;
+}
+
+
+/*HEADER STYLING*/
+.bg-container-1{
+    background-image: url("./img/2010-hus-i-træ.jpg");
+    min-height: 350px;
+    background-position: 80% 30%;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+    background-color: black;
+}
+
+.logo{
+    flex: 0 0 auto;
+}
+
+
+/*NO NEED FOR THIS */
+.navbar{
+    flex: 1 1 auto;
+    text-align: right;
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px;
+}
+
+@media (max-width: 800px) {
+    .navbar-container{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .navbar{
+        flex: 0 0 auto;
+    }
+}
+
+
+article{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+article > h2{
+    width: 100%;
+    text-align: center;
+}
+
+.left, .right{
+    flex: 1;
+    padding: 20px;
+}
+
+.left{
+    margin-right: 10px;
+}
+
+.right{
+    margin-left: 10px;
+}
+
+
+@media (max-width: 800px) {
+    .left, .right{
+        flex: none;
+        width: 100%;
+        margin: 0;
+    }
+    
+}
+
+.cards{
+    background-color: lightgrey;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card{
+    background-color: white;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+    width: calc(33.33% - 40px);
+    border: 3px solid white;
+}
+
+.card-img{
+    width: 100%;
+    min-height: 250px;
+}
+
+@media screen and (max-width:1000px) {
+    .card{
+        width: 100%;
+    }
+}
+
+.bg-container-2{
+    background-image: url("./img/5642_Hejrelunden_\(20\).jpg");
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: 10% 50%;
+}
+
+.bg-container-2 > h2{
+    text-align: center;
+    border: 3px solid white;
+    border-radius: 30px;
+    padding: 10px;
+    color: white;
+    width: 50%;
+    cursor: pointer;
+    
+}
+
+.bg-container-2 > h2:hover{
+    font-size: 27px;
+    transition: all .5s ease-in-out;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(65, 65, 65);
+    justify-content: center;
+    color: grey;
+    padding: 30px;
+    padding-bottom: 100px;
+
+}
+
+footer a{
+    color: grey;
+}
+
+.footer-col{
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.social{
+    width: 100%;
+    text-align: right;
+
+}
