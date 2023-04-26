@@ -125,20 +125,6 @@ header{
 	column-gap: 10px;
 }
 
-/* .grid-item-center{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-} */
-@media (max-width: 1100px) {
-	.styles-grid{
-		grid-template-columns: 1fr;
-		grid-template-rows: repeat(4, 1fr);
-	}
-
-
-}
-
 .styles-card{
 	width: 250px;
 	display: flex;
@@ -156,10 +142,10 @@ header{
 	flex-direction: column;
 	gap: 10px;
 }
-.styles-card-text > p{
-	/*TODO COLOR ??*/
-}
 
+.styles-card-text > h3{
+	font-family: sans-serif;
+}
 .card-grid{
 	margin: 50px 0px;
 	display: grid;
