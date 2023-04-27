@@ -150,7 +150,7 @@ header{
 	margin: 50px 0px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: 260px 230px 40px;
+	grid-template-rows: auto auto 40px;
 	row-gap: 20px;
 	column-gap: 20px;
 }
@@ -175,7 +175,7 @@ header{
 	font-size: 25px;
 }
 
-.featured-card > h3{
+.featured-card > h3, .hairstyle-card > h3{
 	background-color: var(--secondary-color);
 	padding: 10px 20px;
 	position: absolute;
@@ -194,16 +194,6 @@ header{
 	display: flex;
 	align-items: flex-end;
 }
-.hairstyle-card > h3{
-	background-color: var(--secondary-color);
-	padding: 10px 20px;
-	position: absolute;
-	top: -15px;
-	left: 20px;
-	font-family: Comfortaa-Regular;
-}
-
-
 
 .contact-card{
 	display: flex;
@@ -223,6 +213,23 @@ header{
 }
 
 
+
+@media (max-width: 1200px) {
+	.card-grid{
+		grid-template-columns: 1fr;
+	}
+	.contact-card{
+		justify-content: center;
+	}
+}
+
+@media (max-width: 600px){
+	.contact-card{
+		flex-direction: column;
+		height: auto;
+	}
+}
+
 /*Footer styling*/
 footer{
 	background-color: var(--primary-color);
@@ -233,11 +240,18 @@ footer{
 	width: 160px;
 }
 
+@media (max-width: 810px){
+	.temp{
+		display: none;
+	}
+}
+
 .footer-flex{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0px 50px;
+	flex-wrap: wrap;
 }
 
 .copyright{
