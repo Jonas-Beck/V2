@@ -1,0 +1,66 @@
+/*Margin y and gap for items */
+.recipe {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0px;
+    gap: 20px;
+}
+
+/*Mobile Grid*/
+.recipe-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 20px;
+    row-gap: 20px;
+    grid-template-areas:
+        "image"
+        "items"
+        "guide";
+}
+/*Tablet Grid*/
+@media (min-width: 700px){
+    .recipe-grid {
+        display: grid;
+        grid-template-columns: 350px auto;
+        grid-template-rows: 320px auto;
+        grid-template-areas:
+            "image guide"
+            "items guide";
+    }
+}
+/*Desktop Grid*/
+@media (min-width: 1200px) {
+    .recipe-grid {
+        display: grid;
+        grid-template-columns: 400px auto;
+        grid-template-rows: 320px auto;
+        grid-template-areas:
+            "image ."
+            "items guide";
+    }
+}
+/*Assign Grids*/
+.recipe > .recipe-grid > img {
+    grid-area: image;
+    width: 100%;
+    max-width: 350px;
+}
+.recipe-items {
+    grid-area: items;
+}
+.recipe-guide {
+    grid-area: guide;
+}
+
+/*Make first p tag bold*/
+.recipe-items p:first-child,
+.recipe-guide p:first-child {
+    font-weight: bold;
+    padding: 30px 0px;
+}
+
+/*Padding left on list */
+.recipe-items > ul {
+    padding-left: 20px;
+}

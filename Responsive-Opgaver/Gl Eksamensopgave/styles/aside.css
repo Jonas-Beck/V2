@@ -1,0 +1,50 @@
+/*----------------Aside Styling------------------*/
+aside {
+    display: none;
+    grid-area: aside;
+}
+
+/*Desktop Mediaquery*/
+@media (min-width: 1200px) {
+    aside {
+        display: block;
+        padding: 15px;
+    }
+    /*Aside flex container*/
+    .aside-container {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        position: fixed;
+        top: 120px;
+        padding: 10px;
+    }
+    /*Slide div with fixed height*/
+    .slider {
+        height: 560px;
+        position: relative;
+    }
+    /*Position all slide items on top of each other and add opacity + transition*/
+    .slide-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+        transition: opacity .5s;
+    }
+
+    /*Change opacity and z-index of activated slide item*/
+    .slide-item-active {
+        opacity: 1;
+        z-index: 2;
+    }
+    /*Position slide desc in bottom*/
+    .slide-desc{
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+    }
+
+    
+}

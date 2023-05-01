@@ -1,0 +1,61 @@
+/*Override Desktop Grid to remove aside*/
+@media (min-width: 1200px) {
+    .grid-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 1fr auto;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+}
+
+
+/*Override Footer justify-content since no aside */
+.footer-container{
+    justify-content: space-around;
+}
+
+/*----------------Juice styling------------------*/
+
+.juice-section > h1{
+    padding-bottom: 30px;
+}
+
+.juice-grid{
+    margin: 40px 0px;
+    display: grid;
+    row-gap: 20px;
+    column-gap: 60px;
+    max-height: 100%;
+}
+
+.juice-grid > .juice-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.juice-grid > .juice-card > img{
+    width: 100%;
+    height: auto;
+}
+
+
+/*Tablet Grid*/
+@media (min-width:600px) {
+    .juice-grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+}
+/*Desktop Grid*/
+@media (min-width:1200px) {
+    .juice-grid{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: none;
+
+    }
+}

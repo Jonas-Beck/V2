@@ -1,0 +1,84 @@
+/*----------INDEX STYLING -------*/
+
+/*----Fruit Section-----*/
+.fruit-section > h1 {
+    margin-bottom: 20px;
+}
+/*Text Styling*/
+.fruit-section-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+/*Hide image on mobile*/
+.fruit-section > .fruit-section-content img {
+    display: none;
+}
+@media (min-width: 1100px) {
+    /*Show image on desktop*/
+    .fruit-section > .fruit-section-content img {
+        display: block;
+    }
+    .fruit-section-content{
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+}
+
+
+/*----Menu Setion-----*/
+.menu-section{
+    margin: 40px 0px;
+    
+}
+
+.menu-grid{
+    margin: 40px 0px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    column-gap: 60px;
+}
+/*Tablet Grid*/
+@media (min-width:600px) {
+    .menu-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/*Desktop Grid*/
+@media (min-width:1000px) {
+    .menu-grid{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+    /*Hide Menu card desc on desktop*/
+    .menu-card-desc{
+        display: none;
+    }
+}
+
+/*Menu card Styling*/
+.menu-card{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all .5s;
+}
+/*Hover Effekt for cards*/
+@media (min-width:1000px){
+    .menu-card:hover{
+    scale: 1.05;
+    box-shadow: 0 .125rem .25rem rgba(0, 0 , 0, 0.45);
+    }
+}
+
+
+.menu-card-title{
+    font-weight: 700;
+}
+
+
+
+
+

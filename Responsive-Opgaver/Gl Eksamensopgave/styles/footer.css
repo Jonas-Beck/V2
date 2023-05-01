@@ -1,0 +1,64 @@
+/*-----------------Footer styling-------------------*/
+footer {
+    background-color: var(--green);
+    grid-area: footer;
+    padding: 2rem 1rem;
+}
+
+/*Flex container*/
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 70px;
+    color: white;
+}
+
+/*General size for images*/
+.footer-container img {
+    width: 50px;
+}
+
+/*Desktop Media Query*/
+@media (min-width: 940px) {
+    /*More desktop Padding*/
+    footer {
+        padding: 4rem;
+    }
+    /*Row on desktop*/
+    .footer-container {
+        flex-direction: row;
+    }
+    /*Column direction on desktop*/
+    .hours {
+        flex-direction: column;
+    }
+
+    /*Bigger shop icon on dekstop*/
+    .hours > img {
+        width: 100px;
+    }
+}
+
+/*Contact Section*/
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/*Contact Section items*/
+.phone,
+.mail,
+.instagram {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/*Hours Section*/
+.hours {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}

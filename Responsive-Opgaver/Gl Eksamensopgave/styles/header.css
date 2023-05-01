@@ -1,0 +1,93 @@
+/*------------Header styling---------------*/
+header {
+    height: 80px;
+    padding: 0.5rem;
+    background-color: var(--green);
+    grid-area: header;
+    width: 100%;
+    position: fixed;
+    z-index: 10; /*Z-index to make sure its always on top*/
+    /* E.g. Scale effekt on menu cards */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Logo Styling*/
+.navbar-brand img {
+    height: 65px;
+}
+
+/*Navbar Links Styling*/
+.navbar-links {
+    display: none;
+}
+
+/*Desktop specific rules for nav-links*/
+@media (min-width: 800px) {
+    .navbar-links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .navbar-container > .navbar-links-active {
+        all: unset; /*Remove .navbar-links-active rules on desktop*/
+    }
+}
+
+/*Styling for burgermenu items when active on mobile*/
+.navbar-links-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: black;
+    left: 0px;
+    right: 0px;
+    top: 80px;
+    height: 100vh;
+}
+
+.navbar-links > a {
+    text-decoration: none;
+    color: var(--whitesmoke);
+    padding: 20px;
+}
+
+/*Hover effekt for menu items*/
+.navbar-links > a:hover {
+    background-color: var(--menu-hover);
+}
+
+/*Position burgermenu icons parent */
+.navbar-menu {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+}
+
+/*Hide both burgermenu icons so they only show when active*/
+.menuopen,
+.menuclose {
+    height: 50px;
+    width: 50px;
+    display: none;
+}
+
+/*Display currently active burgermenu icon*/
+.navbar-menu > .navbar-menu-active {
+    display: block;
+}
+
+/*Hide burgermenu icons on desktop*/
+@media (min-width: 800px) {
+    .navbar-menu {
+        display: none;
+    }
+}
+
+/*Only used in Opskrifter.html*/
+/*Submenu styling*/
