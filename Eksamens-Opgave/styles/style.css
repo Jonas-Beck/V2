@@ -156,9 +156,7 @@ main {
 
 /*Container for slides and slide arrows*/
 .hero-slider {
-    min-height: 400px;
-    height: 30vw;
-
+    height: 400px;
     /*Flex to center hero-slide-arrows*/
     display: flex;
     justify-content: center;
@@ -244,7 +242,8 @@ main {
     opacity: 1;
 }
 
-/*Tablet size*/
+
+/*Mobile/Tablet */
 @media (min-width: 580px) {
     .banner-content > .content-1 {
         width: 300px;
@@ -254,12 +253,21 @@ main {
     }
     .hero-slide-arrows > img {
         background-color: var(--slider-bg); /*Normal bg color since it cant overlap anymore */
-        width: 60px;
+    }
+}
+
+/*Tablet Size*/
+@media (min-width: 768px){
+    .hero-slider{
+        height: 500px;
     }
 }
 
 /*Desktop Size*/
 @media (min-width: 960px) {
+    .hero-slider{
+        height: 600px;
+    }
     .banner-content > .content-1 {
         width: 350px;
     }
@@ -312,12 +320,15 @@ main {
     }
 }
 
-
 /*Cards styling*/
 .blog-card,
 .events-card,
 .newsletter-card {
     box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, 0.15); /*Boxshadow on all cards*/
+    
+    /*Flex col (Mainly for blog-card)*/
+    display: flex;
+    flex-direction: column;
 }
 
 /*General class for all card-headers*/
@@ -327,10 +338,9 @@ main {
     align-items: center;
     gap: 10px;
 }
-.card-header > h2{
+.card-header > h2 {
     font-weight: 100; /*TODO Maybe more styling*/
 }
-
 
 /*Card header styling*/
 .blog-card-header {
@@ -343,9 +353,9 @@ main {
 }
 
 /*Blog Card Image styling*/
-.blog-card-image > img {
-    width: 100%;
-    height: auto;
+.blog-card-image > img { 
+    width: 100%; /*Take up all space in blog-card-image*/
+    height: 100%;
 }
 
 /*Card text styling*/
@@ -402,7 +412,6 @@ aside {
     padding: 25px;
     background-color: white;
 }
-
 
 /*Form styling*/
 .newsletter-card-form {
