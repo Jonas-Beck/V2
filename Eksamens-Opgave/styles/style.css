@@ -1,0 +1,477 @@
+:root {
+    /*Colors*/
+    --primary-color: #f30b0b;
+    --secondary-color: #222222;
+    --footer-text: #e6f1c9;
+    --burger-menu-hover: #db3838; /*TODO Another color*/
+
+    /*Backgrounds*/
+    --header-bg: #ffffff;
+    --main-bg: #eeeeee;
+    --aside-item-bg: #dddddd;
+    --footer-bg: var(--secondary-color);
+    --slider-bg: rgba(34, 34, 34, 0.8);
+}
+
+/*Google fonts*/
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+.container {
+    /*Max-width 1080px after you remove padding*/
+    max-width: 1120px;
+    /*Center container*/
+    margin: 0px auto;
+    /*Padding for space on mobile*/
+    padding: 0px 20px;
+}
+
+/*----Header styling-------*/
+header {
+    background-color: var(--header-bg);
+    position: sticky;
+    top: 0px;
+    z-index: 10; /*Highest Z-index so background image on slider dosen't overlap*/
+    box-shadow: 0 0.125rem 0.25rem rgb(0, 0, 0, 0.375);
+}
+
+/*Navbar container*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+/*Navbar-Brand Styling*/
+.navbar-brand {
+    padding: 10px;
+    height: 60px;
+}
+/*Brand image responsive*/
+.navbar-brand img {
+    height: 100%;
+    width: auto;
+}
+
+/*Navbar-links styling*/
+.navbar-links {
+    display: none;
+}
+/*Burgermenu Styling only on mobile*/
+@media (max-width: 959px) {
+    .navbar-links-active {
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        position: absolute;
+        top: 60px;
+        left: 0px;
+        right: 0px;
+        height: 100vh;
+    }
+}
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    transition: background-color 0.5s;
+}
+
+/*Home link Specific color/background*/
+.navbar-links a:first-child {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/*Burgermenu items hover */
+.navbar-links a:hover {
+    background-color: var(--burger-menu-hover);
+    color: white;
+}
+
+.navbar-socials img {
+    border-radius: 50%;
+    width: 40px;
+}
+
+/*Navbar-icons*/
+.navbar-icons {
+    background-color: var(--primary-color);
+    align-self: stretch; /*Makes it take up all space on y axis*/
+    width: 70px; /*Same width as navbar height*/
+    cursor: pointer;
+
+    /*Center icon inside*/
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.open,
+.close {
+    padding: 15px;
+}
+
+.hide {
+    display: none;
+}
+
+/*Desktop specific styling*/
+@media (min-width: 960px) {
+    .navbar-links {
+        display: flex;
+        align-self: stretch; /*Stretch so it take up all space on y axis*/
+    }
+    .navbar-links a {
+        color: black;
+        display: flex; /*Center Text inside a tag*/
+        align-items: center;
+    }
+    .navbar-links a:hover {
+        /*Desktop Hover effekt*/
+        background-color: black;
+        color: white;
+    }
+    /*Navbar-socials*/
+    .navbar-socials {
+        padding-right: 10px; /*Space on right side on desktop*/
+    }
+    .navbar-icons {
+        /*Hide burgermenu icons on desktop*/
+        display: none;
+    }
+}
+
+/*--------Main styling----------*/
+main {
+    background-color: var(--main-bg);
+}
+
+/*Container for slides and slide arrows*/
+.hero-slider {
+    min-height: 400px;
+    height: 30vw;
+
+    /*Flex to center hero-slide-arrows*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*Position relative so slides can use absolute*/
+    position: relative;
+}
+
+.banner-slide {
+    /*Aboslute to take up all space */
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    opacity: 0;
+    transition: all 1s;
+    background-size: cover;
+    background-position: center;
+
+    /*Display flex to center banner-content*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Slide 1 background image*/
+.slide-1 {
+    background-image: url(../img/hero.jpg);
+}
+/*Slide 2 background image*/
+.slide-2 {
+    background-image: url(../img/hero2.jpg);
+}
+
+.banner-content {
+    transform: translate(-50%); /*Move content 50% width to left*/
+    transition: all 0.5s;
+    opacity: 0;
+    z-index: 5; /*Higher then banner and lower then burgermenu*/
+}
+
+/*Slide 1 content styling*/
+.banner-content > .content-1 {
+    width: 200px;
+    background-color: white;
+    padding: 25px;
+}
+
+/*Slide 2 content styling*/
+.banner-content > .content-2 {
+    width: 270px;
+    text-align: center;
+    color: white;
+    background-color: var(--slider-bg);
+    font-size: 1.3rem;
+    padding: 30px;
+}
+
+/*Slider Arrows*/
+.hero-slide-arrows {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    opacity: 0;
+}
+/*Slider arrows iamge styling*/
+.hero-slide-arrows > img {
+    background-color: var(--secondary-color); /*No opacity for small screen if arrows overlap with content-2 (350px)*/
+    cursor: pointer;
+    width: 50px;
+    z-index: 5; /*Higher then banner and lower then burgermenu*/
+    padding: 10px;
+}
+
+/*Active classes for slider*/
+.banner-slide-active {
+    opacity: 1;
+}
+.banner-content-active {
+    transform: none; /*Remove Transform translate returning element to center*/
+    opacity: 1;
+}
+
+/*Tablet size*/
+@media (min-width: 580px) {
+    .banner-content > .content-1 {
+        width: 300px;
+    }
+    .banner-content > .content-2 {
+        width: 400px;
+    }
+    .hero-slide-arrows > img {
+        background-color: var(--slider-bg); /*Normal bg color since it cant overlap anymore */
+        width: 60px;
+    }
+}
+
+/*Desktop Size*/
+@media (min-width: 960px) {
+    .banner-content > .content-1 {
+        width: 350px;
+    }
+    .banner-content > .content-2 {
+        width: 450px;
+    }
+}
+
+/*---Main Section*/
+.main-grid {
+    display: grid; /*Grid for section with blogs and aside*/
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: 40px;
+    column-gap: 40px;
+
+    /*Using padding-top/padding-bottom to not override .container padding 0px 20px*/
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.blog-grid {
+    display: grid; /*Grid for section with blogs*/
+    column-gap: 40px;
+    row-gap: 40px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+
+/*Tablet grid*/
+@media (min-width: 768px) {
+    .main-grid {
+        /*calc width of each caloumn after removing column gap*/
+        grid-template-columns: calc(60% - 20px) calc(40% - 20px);
+    }
+}
+
+/*Desktop Grid*/
+@media (min-width: 960px) {
+    .main-grid {
+        /*calc width of each caloumn after removing column gap*/
+        grid-template-columns: calc(65% - 20px) calc(35% - 20px);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .blog-grid .blog-card:first-child {
+        grid-column: span 2; /*First article take up all space on x axis*/
+    }
+}
+
+
+/*Cards styling*/
+.blog-card,
+.events-card,
+.newsletter-card {
+    box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, 0.15); /*Boxshadow on all cards*/
+}
+
+/*General class for all card-headers*/
+.card-header {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+}
+.card-header > h2{
+    font-weight: 100; /*TODO Maybe more styling*/
+}
+
+
+/*Card header styling*/
+.blog-card-header {
+    background-color: var(--primary-color);
+    color: white;
+}
+.aside-card-header {
+    background-color: black;
+    color: white;
+}
+
+/*Blog Card Image styling*/
+.blog-card-image > img {
+    width: 100%;
+    height: auto;
+}
+
+/*Card text styling*/
+.blog-card-text {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 25px;
+    gap: 30px;
+}
+
+/*Read more button styling used on all blog cards*/
+.readmore-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 25px;
+    align-self: flex-start;
+    text-decoration: none;
+}
+
+/*Aside Flex*/
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/*Event links styling*/
+.events-card-events > a {
+    display: flex;
+    gap: 30px;
+    padding: 15px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/*Style all even a tags using nth-child(even)*/
+.events-card-events > a:nth-child(even) {
+    background-color: white;
+}
+/*Style all odd a tags using nth-child(odd)*/
+.events-card-events > a:nth-child(odd) {
+    background-color: var(--aside-item-bg);
+}
+
+/*Hover effekt on events using primary color*/
+.events-card-events > a:hover {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+/*Text styling for newsletter card*/
+.newsletter-card-text {
+    padding: 25px;
+    background-color: white;
+}
+
+
+/*Form styling*/
+.newsletter-card-form {
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/*Input Text/Mail styling*/
+input[type="text"],
+input[type="email"] {
+    padding: 10px 10px;
+    border: 1px solid rgb(0, 0, 0, 0.35);
+    font-size: 1.1rem;
+}
+
+/*Change default outline on click (focus) to primary color */
+input[type="text"]:focus,
+input[type="email"]:focus {
+    outline: 2px solid var(--primary-color); /*Example outline*/
+}
+
+/*Submit button styling */
+input[type="submit"] {
+    background-color: red;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/*--------Footer styling--------*/
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 22px 16px;
+}
+
+/*Flex container for footer*/
+.footer-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+
+.contact > p {
+    padding: 3px 0px;
+}
+
+/*Footer item header styling*/
+.contact > h2,
+.history > h2,
+.member > h2 {
+    color: var(--primary-color);
+    padding-bottom: 15px;
+    font-size: 30px;
+}
+
+/*Desktop specific styling*/
+@media (min-width: 960px) {
+    .footer-flex {
+        flex-direction: row;
+    }
+    .contact,
+    .history,
+    .member {
+        width: 30%;
+    }
+}
