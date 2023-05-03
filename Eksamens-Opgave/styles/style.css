@@ -3,7 +3,7 @@
     --primary-color: #f30b0b;
     --secondary-color: #222222;
     --footer-text: #e6f1c9;
-    --burger-menu-hover: #db3838; /*TODO Another color*/
+    --burger-menu-hover: #db3838;
 
     /*Backgrounds*/
     --header-bg: #ffffff;
@@ -341,7 +341,7 @@ main {
     gap: 10px;
 }
 .card-header > h2 {
-    font-weight: 100; /*TODO Maybe more styling*/
+    font-weight: 100;
 }
 
 /*Card header styling*/
