@@ -243,7 +243,6 @@ main {
     opacity: 1;
 }
 
-
 /*Mobile/Tablet */
 @media (min-width: 580px) {
     .banner-content > .content-1 {
@@ -258,15 +257,15 @@ main {
 }
 
 /*Tablet Size*/
-@media (min-width: 768px){
-    .hero-slider{
+@media (min-width: 768px) {
+    .hero-slider {
         height: 500px;
     }
 }
 
 /*Desktop Size*/
 @media (min-width: 960px) {
-    .hero-slider{
+    .hero-slider {
         height: 600px;
     }
     .banner-content > .content-1 {
@@ -326,7 +325,7 @@ main {
 .events-card,
 .newsletter-card {
     box-shadow: 0 0.5rem 1rem rgb(0, 0, 0, 0.15); /*Boxshadow on all cards*/
-    
+
     /*Flex col (Mainly for blog-card)*/
     display: flex;
     flex-direction: column;
@@ -354,7 +353,7 @@ main {
 }
 
 /*Blog Card Image styling*/
-.blog-card-image > img { 
+.blog-card-image > img {
     width: 100%; /*Take up all space in blog-card-image*/
     height: 100%;
 }
@@ -428,6 +427,9 @@ input[type="email"] {
     padding: 10px 10px;
     border: 1px solid rgb(0, 0, 0, 0.35);
     font-size: 1.1rem;
+
+    -webkit-border-radius: 0;   /*Remove border radius on IOS / Safari*/
+
 }
 
 /*Change default outline on click (focus) to primary color */
@@ -444,6 +446,8 @@ input[type="submit"] {
     color: white;
     cursor: pointer;
     font-size: 1.1rem;
+
+    -webkit-border-radius: 0;   /*Remove border radius on IOS / Safari*/
 }
 
 /*--------Footer styling--------*/
