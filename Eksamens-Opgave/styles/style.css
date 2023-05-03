@@ -64,6 +64,7 @@ header {
 .navbar-links {
     display: none;
 }
+
 /*Burgermenu Styling only on mobile*/
 @media (max-width: 959px) {
     .navbar-links-active {
@@ -77,6 +78,7 @@ header {
         height: 100vh;
     }
 }
+
 .navbar-links a {
     text-decoration: none;
     color: white;
@@ -269,7 +271,7 @@ main {
         height: 600px;
     }
     .banner-content > .content-1 {
-        width: 350px;
+        width: 450px;
     }
     .banner-content > .content-2 {
         width: 450px;
