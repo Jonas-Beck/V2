@@ -227,9 +227,9 @@ main {
 }
 /*Slider arrows iamge styling*/
 .hero-slide-arrows > img {
-    background-color: var(--secondary-color); /*No opacity for small screen if arrows overlap with content-2 (350px)*/
+    background-color: var(--slider-bg);
     cursor: pointer;
-    width: 50px;
+    width: 40px;
     z-index: 5; /*Higher then banner and lower then burgermenu*/
     padding: 10px;
 }
@@ -252,7 +252,7 @@ main {
         width: 400px;
     }
     .hero-slide-arrows > img {
-        background-color: var(--slider-bg); /*Normal bg color since it cant overlap anymore */
+        width: 50px;
     }
 }
 
@@ -428,8 +428,8 @@ input[type="email"] {
     border: 1px solid rgb(0, 0, 0, 0.35);
     font-size: 1.1rem;
 
-    -webkit-border-radius: 0;   /*Remove border radius on IOS / Safari*/
-
+    -webkit-appearance: none; /*Remove default styling in ios / safari*/
+    -webkit-border-radius: 0; /*Remove border radius on IOS / Safari*/
 }
 
 /*Change default outline on click (focus) to primary color */
@@ -447,7 +447,8 @@ input[type="submit"] {
     cursor: pointer;
     font-size: 1.1rem;
 
-    -webkit-border-radius: 0;   /*Remove border radius on IOS / Safari*/
+    -webkit-appearance: none; /*Remove default styling in ios / safari*/
+    -webkit-border-radius: 0; /*Remove border radius on IOS / Safari*/
 }
 
 /*--------Footer styling--------*/
